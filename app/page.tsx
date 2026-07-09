@@ -61,9 +61,9 @@ export default function Home() {
 
     // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+      anchor.addEventListener("click", (e) => {
         e.preventDefault()
-        const href = (this as HTMLAnchorElement).getAttribute("href")
+        const href = anchor.getAttribute("href")
         if (href) {
           document.querySelector(href)?.scrollIntoView({
             behavior: "smooth",

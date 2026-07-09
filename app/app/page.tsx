@@ -7,7 +7,7 @@ import { WpxInput } from "@/components/ui/wpx-input"
 
 const stats = [
   { label: "Total Revenue", value: "$48,290", delta: "+12.4%", tone: "success" as const },
-  { label: "Active Users", value: "3,842", delta: "+4.1%", tone: "info" as const },
+  { label: "Active Users", value: "3,842", delta: "+4.1%", tone: "blue" as const },
   { label: "Churn Rate", value: "1.9%", delta: "-0.6%", tone: "success" as const },
   { label: "Open Tickets", value: "27", delta: "+3", tone: "warning" as const },
 ]
@@ -29,7 +29,7 @@ export default function DashboardPage() {
               V
             </div>
             <span className="font-sans text-lg font-bold tracking-tight">VISCERA</span>
-            <WpxBadge tone="info">WhisperX</WpxBadge>
+            <WpxBadge tone="blue">WhisperX</WpxBadge>
           </div>
           <div className="flex items-center gap-3">
             <div className="hidden w-64 sm:block">
