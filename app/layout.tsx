@@ -1,11 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Syne, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const syne = Syne({ subsets: ["latin"], variable: "--font-syne" })
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
   title: "VISCERA — WhisperX Design System",
@@ -36,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${inter.variable} bg-background`}>
+    <html lang="en" className="bg-background">
       <body className="font-sans antialiased">
         {children}
         <Analytics />
