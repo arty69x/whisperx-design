@@ -1,0 +1,152 @@
+{
+  "lockfileVersion": 1,
+  "name": "viscera-wpx",
+  "version": "1.0.0",
+  "generatedFrom": "global-tw4-master.v7.full-spec.json",
+  "resolvedTokens": {
+    "colors": {
+      "--background": "#0b0b10",
+      "--foreground": "#ffffff",
+      "--card": "#0f0f18",
+      "--card-foreground": "#ffffff",
+      "--popover": "#0f0f18",
+      "--popover-foreground": "#ffffff",
+      "--primary": "#db2777",
+      "--primary-foreground": "#ffffff",
+      "--secondary": "#1a1a24",
+      "--secondary-foreground": "#ffffff",
+      "--muted": "#16161f",
+      "--muted-foreground": "rgba(255,255,255,0.68)",
+      "--accent": "#1f1f2b",
+      "--accent-foreground": "#ffffff",
+      "--destructive": "#ef4444",
+      "--destructive-foreground": "#ffffff",
+      "--brand-pink": "#db2777",
+      "--brand-orange": "#f97316",
+      "--brand-blue": "#3b82f6",
+      "--success": "#22c55e",
+      "--warning": "#eab308",
+      "--info": "#3b82f6",
+      "--border": "rgba(255,255,255,0.12)",
+      "--input": "rgba(255,255,255,0.12)",
+      "--ring": "#db2777",
+      "--chart-1": "#db2777",
+      "--chart-2": "#f97316",
+      "--chart-3": "#3b82f6",
+      "--chart-4": "#22c55e",
+      "--chart-5": "#eab308",
+      "--sidebar": "#0f0f18",
+      "--sidebar-foreground": "#ffffff",
+      "--sidebar-primary": "#db2777",
+      "--sidebar-primary-foreground": "#ffffff",
+      "--sidebar-accent": "#1f1f2b",
+      "--sidebar-accent-foreground": "#ffffff",
+      "--sidebar-border": "rgba(255,255,255,0.12)",
+      "--sidebar-ring": "#db2777"
+    },
+    "radius": {
+      "--radius": "0.75rem",
+      "--radius-sm": "calc(0.75rem - 6px)",
+      "--radius-md": "calc(0.75rem - 4px)",
+      "--radius-lg": "0.75rem",
+      "--radius-xl": "calc(0.75rem + 4px)",
+      "--radius-2xl": "calc(0.75rem + 12px)"
+    },
+    "shadows": {
+      "--shadow-token-sm": "0 1px 2px rgba(0,0,0,0.35)",
+      "--shadow-token-md": "0 8px 20px rgba(0,0,0,0.45)",
+      "--shadow-token-lg": "0 20px 40px rgba(0,0,0,0.55)",
+      "--shadow-token-xl": "0 30px 60px rgba(0,0,0,0.65)",
+      "--shadow-glow-pink": "0 0 24px rgba(219,39,119,0.38)",
+      "--shadow-glow-orange": "0 0 24px rgba(249,115,22,0.32)",
+      "--shadow-glow-blue": "0 0 24px rgba(59,130,246,0.32)",
+      "--shadow-glow-white": "0 0 24px rgba(255,255,255,0.08)"
+    },
+    "easings": {
+      "--ease-standard": "cubic-bezier(0.2,0,0,1)",
+      "--ease-emphasized": "cubic-bezier(0.2,0,0,1)",
+      "--ease-bounce": "cubic-bezier(0.34,1.56,0.64,1)",
+      "--ease-smooth": "cubic-bezier(0.4,0,0.2,1)",
+      "--ease-sharp": "cubic-bezier(0.4,0,0.6,1)"
+    },
+    "fonts": {
+      "--font-sans": "var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif",
+      "--font-display": "var(--font-syne), Syne, ui-sans-serif, system-ui, sans-serif",
+      "--font-mono": "Geist Mono, ui-monospace, monospace"
+    },
+    "motion": {
+      "durationsSec": {
+        "instant": 0.08, "fast": 0.15, "base": 0.22, "smooth": 0.3,
+        "slow": 0.42, "slower": 0.6, "hero": 0.8, "epic": 1
+      },
+      "easing": {
+        "standard": [0.2, 0, 0, 1],
+        "spring": [0.34, 1.56, 0.64, 1],
+        "springSoft": [0.22, 1.2, 0.36, 1],
+        "out": [0.16, 1, 0.3, 1],
+        "inOut": [0.65, 0, 0.35, 1],
+        "smooth": [0.4, 0, 0.2, 1],
+        "sharp": [0.4, 0, 0.6, 1],
+        "bounce": [0.18, 1.6, 0.4, 1],
+        "linear": [0, 0, 1, 1]
+      }
+    }
+  },
+  "componentApi": {
+    "WpxButton": {
+      "export": "WpxButton",
+      "kind": "client/forwardRef<HTMLButtonElement>",
+      "props": {
+        "variant": { "type": "\"primary\"|\"secondary\"|\"ghost\"|\"outline\"", "default": "primary" },
+        "size": { "type": "\"sm\"|\"md\"|\"lg\"", "default": "md" },
+        "extends": "HTMLMotionProps<\"button\">"
+      }
+    },
+    "WpxCard": {
+      "exports": ["WpxCard", "WpxCardHeader", "WpxCardTitle", "WpxCardDescription", "WpxCardBody", "WpxCardFooter"],
+      "kind": "server/div|h3|p",
+      "props": { "extends": "React.HTMLAttributes" }
+    },
+    "WpxInput": {
+      "export": "WpxInput",
+      "kind": "forwardRef<HTMLInputElement>",
+      "props": {
+        "label": "string?",
+        "helper": "string?",
+        "error": "string?",
+        "extends": "React.InputHTMLAttributes<HTMLInputElement>"
+      }
+    },
+    "WpxBadge": {
+      "export": "WpxBadge",
+      "kind": "server/span",
+      "props": {
+        "tone": { "type": "\"pink\"|\"orange\"|\"blue\"|\"success\"|\"warning\"|\"neutral\"", "default": "neutral" },
+        "extends": "React.HTMLAttributes<HTMLSpanElement>"
+      }
+    }
+  },
+  "utilityClasses": [".wpx-container", ".wpx-glass", ".huge-type", ".outline-text", ".wpx-marquee-inner"],
+  "files": {
+    "app/globals.css": "token layer (:root + .light + @theme inline) + base + components",
+    "app/layout.tsx": "Syne + Inter font vars, html.bg-background, body.font-sans",
+    "lib/motion.ts": "motionTokens + fadeIn/slideUp/scaleIn/staggerContainer/tapTransition",
+    "components/ui/wpx-button.tsx": "WpxButton",
+    "components/ui/wpx-card.tsx": "WpxCard family",
+    "components/ui/wpx-input.tsx": "WpxInput",
+    "components/ui/wpx-badge.tsx": "WpxBadge",
+    "app/design-system/page.tsx": "reference showcase",
+    "app/app/page.tsx": "example dashboard"
+  },
+  "dependencies": {
+    "motion": "^11 || latest (motion/react)",
+    "tailwindcss": "4.x",
+    "tw-animate-css": "present"
+  },
+  "constraints": {
+    "maxCoreColors": 5,
+    "avoidPurple": true,
+    "darkFirst": true,
+    "respectReducedMotion": true
+  }
+}

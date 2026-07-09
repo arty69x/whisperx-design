@@ -1,0 +1,157 @@
+{
+  "$schema": "https://v0.app/schemas/design-system.spec.json",
+  "name": "VISCERA × WhisperX Design System",
+  "id": "viscera-wpx",
+  "version": "1.0.0",
+  "description": "Dark-first, brutalist-editorial design system for the VISCERA portfolio template, themed with WhisperX Design OS tokens (global-tw4-master.v7).",
+  "stack": {
+    "framework": "next@16",
+    "react": "19",
+    "tailwind": "4",
+    "motion": "motion (motion/react)",
+    "fonts": { "display": "Syne", "sans": "Inter", "mono": "Geist Mono" }
+  },
+  "principles": [
+    "Dark-first surfaces with high-contrast white foreground.",
+    "One brand hue (pink) + orange/blue accents; never exceed 5 core colors.",
+    "Oversized Syne display type paired with Inter body copy.",
+    "Glow shadows signal brand/interactive elements; neutral elevation for structure.",
+    "Motion uses spring-soft easing; respect prefers-reduced-motion."
+  ],
+  "themes": {
+    "default": "dark",
+    "dark": { "root": ":root" },
+    "light": { "root": ".light", "note": "Optional inverse theme." }
+  },
+  "tokens": {
+    "color": {
+      "surfaces": {
+        "background": "#0b0b10",
+        "card": "#0f0f18",
+        "popover": "#0f0f18",
+        "secondary": "#1a1a24",
+        "muted": "#16161f",
+        "accent": "#1f1f2b"
+      },
+      "text": {
+        "foreground": "#ffffff",
+        "muted-foreground": "rgba(255,255,255,0.68)"
+      },
+      "brand": {
+        "primary": "#db2777",
+        "brand-pink": "#db2777",
+        "brand-orange": "#f97316",
+        "brand-blue": "#3b82f6"
+      },
+      "semantic": {
+        "destructive": "#ef4444",
+        "success": "#22c55e",
+        "warning": "#eab308",
+        "info": "#3b82f6"
+      },
+      "lines": {
+        "border": "rgba(255,255,255,0.12)",
+        "input": "rgba(255,255,255,0.12)",
+        "ring": "#db2777"
+      },
+      "chart": ["#db2777", "#f97316", "#3b82f6", "#22c55e", "#eab308"]
+    },
+    "radius": {
+      "base": "0.75rem",
+      "sm": "calc(base - 6px)",
+      "md": "calc(base - 4px)",
+      "lg": "base",
+      "xl": "calc(base + 4px)",
+      "2xl": "calc(base + 12px)"
+    },
+    "shadow": {
+      "elevation": {
+        "sm": "0 1px 2px rgba(0,0,0,.35)",
+        "md": "0 8px 20px rgba(0,0,0,.45)",
+        "lg": "0 20px 40px rgba(0,0,0,.55)",
+        "xl": "0 30px 60px rgba(0,0,0,.65)"
+      },
+      "glow": {
+        "pink": "0 0 24px rgba(219,39,119,.38)",
+        "orange": "0 0 24px rgba(249,115,22,.32)",
+        "blue": "0 0 24px rgba(59,130,246,.32)",
+        "white": "0 0 24px rgba(255,255,255,.08)"
+      }
+    },
+    "typography": {
+      "families": { "display": "var(--font-syne)", "sans": "var(--font-inter)", "mono": "Geist Mono" },
+      "display": {
+        "utility": ".huge-type",
+        "weight": 800,
+        "size": "clamp(4rem, 18vw, 20rem)",
+        "lineHeight": 0.8,
+        "letterSpacing": "-0.05em",
+        "transform": "uppercase"
+      },
+      "outline": { "utility": ".outline-text", "stroke": "1px foreground", "fill": "transparent", "opacity": 0.15 },
+      "body": { "lineHeight": 1.5 }
+    },
+    "motion": {
+      "durationsSec": {
+        "instant": 0.08, "fast": 0.15, "base": 0.22, "smooth": 0.3,
+        "slow": 0.42, "slower": 0.6, "hero": 0.8, "epic": 1
+      },
+      "easing": {
+        "standard": [0.2, 0, 0, 1],
+        "spring": [0.34, 1.56, 0.64, 1],
+        "springSoft": [0.22, 1.2, 0.36, 1],
+        "out": [0.16, 1, 0.3, 1],
+        "inOut": [0.65, 0, 0.35, 1],
+        "smooth": [0.4, 0, 0.2, 1],
+        "sharp": [0.4, 0, 0.6, 1],
+        "bounce": [0.18, 1.6, 0.4, 1]
+      },
+      "variants": ["fadeIn", "slideUp", "scaleIn", "staggerContainer", "tapTransition"],
+      "source": "lib/motion.ts"
+    }
+  },
+  "utilities": {
+    ".wpx-container": "mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8",
+    ".wpx-glass": "translucent card + 16px backdrop-blur + border",
+    ".huge-type": "oversized uppercase Syne display",
+    ".outline-text": "transparent fill + 1px foreground stroke",
+    ".wpx-marquee-inner": "infinite 20s horizontal marquee"
+  },
+  "components": {
+    "WpxButton": {
+      "file": "components/ui/wpx-button.tsx",
+      "client": true,
+      "props": { "variant": ["primary", "secondary", "ghost", "outline"], "size": ["sm", "md", "lg"] },
+      "defaults": { "variant": "primary", "size": "md" },
+      "motion": "hover y:-2, tap scale:0.96",
+      "a11y": "focus-visible ring, disabled opacity + pointer-events-none"
+    },
+    "WpxCard": {
+      "file": "components/ui/wpx-card.tsx",
+      "parts": ["WpxCard", "WpxCardHeader", "WpxCardTitle", "WpxCardDescription", "WpxCardBody", "WpxCardFooter"],
+      "surface": "rounded-2xl bg-card ring-border shadow-md"
+    },
+    "WpxInput": {
+      "file": "components/ui/wpx-input.tsx",
+      "props": ["label", "helper", "error"],
+      "a11y": "auto id, aria-invalid, aria-describedby wiring"
+    },
+    "WpxBadge": {
+      "file": "components/ui/wpx-badge.tsx",
+      "props": { "tone": ["pink", "orange", "blue", "success", "warning", "neutral"] },
+      "defaults": { "tone": "neutral" }
+    }
+  },
+  "routes": {
+    "/": "VISCERA portfolio (untouched original template)",
+    "/design-system": "Living token + component reference",
+    "/app": "Example dashboard composed from Wpx components"
+  },
+  "layoutSafety": {
+    "boxSizing": "border-box on all elements",
+    "minSize": "min-w-0 / min-h-0 on all elements",
+    "antialias": true,
+    "smoothScroll": true,
+    "overflowX": "hidden on body"
+  }
+}
