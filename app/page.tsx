@@ -33,27 +33,6 @@ const stats = [
 
 const capabilities = ["Product strategy", "Interface systems", "Motion direction", "AI-assisted content", "Conversion polish", "Launch QA"]
 
-const launchLinks = [
-  {
-    title: "Open App Dashboard",
-    href: "/app",
-    eyebrow: "Workspace",
-    copy: "Jump into the polished WhisperX dashboard template with stats, activity, and quick actions.",
-  },
-  {
-    title: "Open Design System",
-    href: "/design-system",
-    eyebrow: "Tokens + components",
-    copy: "Review the VISCERA/WPX color, radius, shadow, type, button, card, and input foundations.",
-  },
-  {
-    title: "Open Screenshot Tool",
-    href: "/screenshot-to-tailwind",
-    eyebrow: "AI utility",
-    copy: "Convert a UI screenshot into clean responsive Tailwind markup from the landing page.",
-  },
-]
-
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
@@ -66,11 +45,10 @@ export default function Home() {
         <div className="hidden items-center gap-6 text-xs font-bold uppercase tracking-[0.22em] text-white/65 md:flex">
           <a className="transition hover:text-white" href="#work">Work</a>
           <a className="transition hover:text-white" href="#system">System</a>
-          <a className="transition hover:text-white" href="#launch">Open</a>
           <a className="transition hover:text-white" href="#contact">Contact</a>
         </div>
-        <a className="rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-black transition hover:bg-primary hover:text-white" href="/app">
-          Open app
+        <a className="rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-black transition hover:bg-primary hover:text-white" href="mailto:hello@viscera.studio">
+          Start
         </a>
       </nav>
 
@@ -105,32 +83,6 @@ export default function Home() {
           New era — product polish — design systems — launch templates — New era — product polish — design systems — launch templates —
         </div>
       </div>
-
-      <section id="launch" className="wpx-container py-24">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <div className="section-kicker">Open from homepage</div>
-            <h2 className="mt-5 max-w-4xl font-display text-5xl font-black uppercase tracking-[-.06em] md:text-7xl">
-              Connected entry points for every template.
-            </h2>
-          </div>
-          <a className="rounded-full border border-white/15 px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-white/70 transition hover:border-primary hover:text-white" href="/app">
-            Launch dashboard
-          </a>
-        </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {launchLinks.map((item) => (
-            <a key={item.href} className="launch-card group" href={item.href}>
-              <span className="text-xs font-black uppercase tracking-[0.24em] text-primary">{item.eyebrow}</span>
-              <strong className="mt-5 block font-display text-3xl font-black uppercase tracking-[-.05em] text-white transition group-hover:text-primary">
-                {item.title}
-              </strong>
-              <span className="mt-4 block text-sm leading-6 text-white/60">{item.copy}</span>
-              <span className="mt-8 inline-flex text-xs font-black uppercase tracking-[0.2em] text-white/80">Open now →</span>
-            </a>
-          ))}
-        </div>
-      </section>
 
       <section id="work" className="wpx-container py-24">
         <div className="section-kicker">Selected archive</div>

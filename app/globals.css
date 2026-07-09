@@ -297,9 +297,3 @@
     @apply flex min-h-80 flex-col justify-between gap-8 p-6 md:p-10;
   }
 }
-
-@layer components {
-  .launch-card {
-    @apply block rounded-[2rem] border border-white/10 bg-white/[0.035] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-primary/10 hover:shadow-glow-pink;
-  }
-}
