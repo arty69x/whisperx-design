@@ -258,3 +258,48 @@
   display: inline-block;
   animation: wpx-marquee 20s linear infinite;
 }
+
+@layer components {
+  .section-kicker {
+    @apply text-xs font-black uppercase tracking-[0.28em] text-primary;
+  }
+
+  .hero-panel {
+    @apply relative min-h-[34rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-token-xl;
+  }
+
+  .hero-panel::before {
+    content: "";
+    @apply absolute inset-0 z-10 bg-[linear-gradient(180deg,transparent_35%,rgba(0,0,0,.82)_100%)];
+  }
+
+  .hero-panel img {
+    @apply size-full object-cover grayscale transition duration-700 hover:grayscale-0;
+  }
+
+  .hero-panel__caption {
+    @apply absolute bottom-5 left-5 z-20 max-w-72 rounded-full border border-white/15 bg-black/45 px-4 py-3 text-xs font-black uppercase tracking-[0.18em] text-white/75 backdrop-blur-xl;
+  }
+
+  .project-card {
+    @apply grid overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] md:grid-cols-[0.85fr_1.15fr];
+  }
+
+  .project-card__media {
+    @apply min-h-80 overflow-hidden bg-white/5;
+  }
+
+  .project-card__media img {
+    @apply size-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0;
+  }
+
+  .project-card__body {
+    @apply flex min-h-80 flex-col justify-between gap-8 p-6 md:p-10;
+  }
+}
+
+@layer components {
+  .launch-card {
+    @apply block rounded-[2rem] border border-white/10 bg-white/[0.035] p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-primary/10 hover:shadow-glow-pink;
+  }
+}

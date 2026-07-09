@@ -187,7 +187,6 @@ export function ScreenshotToTailwind() {
                   exit={{ opacity: 0, scale: 0.98 }}
                   className="group relative overflow-hidden rounded-xl ring-1 ring-border"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={image || "/placeholder.svg"}
                     alt={`Screenshot to convert${fileName ? `: ${fileName}` : ""}`}
