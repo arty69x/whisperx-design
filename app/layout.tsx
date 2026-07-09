@@ -8,8 +8,8 @@ const syne = Syne({ subsets: ["latin"], variable: "--font-syne" })
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  title: "VISCERA STUDIO",
-  description: "Digital artifacts that shatter the noise",
+  title: "VISCERA — WhisperX Design System",
+  description: "A WhisperX-powered design system built on the VISCERA aesthetic",
   generator: "v0.app",
   icons: {
     icon: [
@@ -36,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${syne.variable} ${inter.variable}`}>
+    <html lang="en" className={`${syne.variable} ${inter.variable} bg-background`}>
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
       </body>
